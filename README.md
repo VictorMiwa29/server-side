@@ -11,9 +11,9 @@ Executar no terminal
  - npm install.
 
 Entrar na pasta src/config/config.json
- - Mude o username pelo seu do MySql
- - Mude sua senha caso necessário
- - database caso queira outro nome do db
+ - Mude o username 'root' pelo seu do MySql
+ - Mude sua senha 'password' caso necessário
+ - database 'sequelize_db' caso queira outro nome do db
 
 Executar os comandos do Sequelize no terminal
  - npx sequelize db:create
