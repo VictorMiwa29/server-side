@@ -3,7 +3,7 @@ const Comic = (sequelize, DataTypes) => sequelize.define('Comic', {
     type: DataTypes.INTEGER,
     primaryKey: true,
   },
-  name: DataTypes.STRING,
+  title: DataTypes.STRING,
   image: DataTypes.STRING,
 }, {
   timestamps: false,

@@ -1,23 +1,27 @@
-const UserComic = (sequelize, DataTypes) => sequelize.define('UserComic',
-  {},
-  {
-    timestamps: false,
-  });
+const UserComic = (sequelize, DataTypes) => {
+  const UserComics = sequelize.define('UserComic', {},
+    {
+      timestamps: false,
+      underscored: true,
+      tableName: 'UserComics',
+    });
 
-UserComic.associate = (models) => {
-  models.Comic.belongsToMany(models.User, {
-    as: 'users',
-    through: UserComic,
-    foreignKey: 'comic_id',
-    otherKey: 'user_id',
-  });
+  UserComics.associate = (models) => {
+    models.Comic.belongsToMany(models.User, {
+      as: 'users',
+      through: UserComics,
+      foreignKey: 'comicId',
+      otherKey: 'userId',
+    });
 
-  models.User.belongsToMany(models.Comic, {
-    as: 'comic',
-    through: UserComic,
-    foreignKey: 'user_id',
-    otherKey: 'comic_id',
-  });
+    models.User.belongsToMany(models.Comic, {
+      as: 'comics',
+      through: UserComics,
+      foreignKey: 'userId',
+      otherKey: 'comicId',
+    });
+  };
+  return UserComics;
 };
 
 module.exports = UserComic;

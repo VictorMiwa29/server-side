@@ -1,23 +1,26 @@
-const UserCharacter = (sequelize, DataTypes) => sequelize.define('UserCharacter',
-  {},
-  {
+const UserCharacter = (sequelize, DataTypes) => {
+  const UserCharacters = sequelize.define('UserCharacter', {}, {
     timestamps: false,
+    underscored: true,
+    tableName: 'UserCharacters',
   });
 
-UserCharacter.associate = (models) => {
-  models.Character.belongsToMany(models.User, {
-    as: 'users',
-    through: UserCharacter,
-    foreignKey: 'character_id',
-    otherKey: 'user_id',
-  });
+  UserCharacters.associate = (models) => {
+    models.Character.belongsToMany(models.User, {
+      as: 'users',
+      through: UserCharacters,
+      foreignKey: 'characterId',
+      otherKey: 'userId',
+    });
 
-  models.User.belongsToMany(models.Character, {
-    as: 'character',
-    through: UserCharacter,
-    foreignKey: 'user_id',
-    otherKey: 'character_id',
-  });
+    models.User.belongsToMany(models.Character, {
+      as: 'characters',
+      through: UserCharacters,
+      foreignKey: 'userId',
+      otherKey: 'characterId',
+    });
+  };
+  return UserCharacters;
 };
 
 module.exports = UserCharacter;

@@ -7,8 +7,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
+      firstName: {
         allowNull: false,
+        type: Sequelize.STRING,
+      },
+      lastName: {
         type: Sequelize.STRING,
       },
       email: {
@@ -19,10 +22,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      phone: {
+        type: Sequelize.STRING,
+      },
     });
   },
 
-  down: async (queryInterface, __Sequelize) => {
+  down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Users');
   },
 };

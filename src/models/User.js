@@ -1,7 +1,9 @@
 const User = (sequelize, DataTypes) => sequelize.define('User', {
-  name: DataTypes.STRING,
+  firstName: DataTypes.STRING,
+  lastName: DataTypes.STRING,
   email: DataTypes.STRING,
   password: DataTypes.STRING,
+  phone: DataTypes.STRING,
 }, {
   timestamps: false,
 });
