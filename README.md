@@ -11,6 +11,7 @@ Executar no terminal
  - npm install.
 
 Entrar na pasta src/config/config.json
+ 
  Altere a chave "development"
  - Mude o username 'root' pelo seu do MySql
  - Mude sua senha 'password' caso necessário
