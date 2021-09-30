@@ -21,7 +21,7 @@ Executar os comandos do Sequelize no terminal
  - npx sequelize db:create
  - npx sequelize db:migrate
 
-Executar o Fron-End
+Executar o Front-End
   https://github.com/VictorMiwa29/client-side
  
 # Executando Aplicação
